@@ -1,4 +1,4 @@
-const form = document.querySelector('#form');
+const btn = document.querySelector('#bsub');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const bks = document.querySelector('.books');
@@ -7,45 +7,62 @@ let books = [
 
 ];
 
+class BksClass {
+  constructor(authorC, titleC, idC) {
+    this.authorC = authorC;
+    this.titleC = titleC;
+    this.idC = idC;
+  }
+
+  createBks() {
+    const li = document.createElement('li');
+    li.setAttribute('id', `id${this.idC}`);
+    const titleText = document.createElement('div');
+    const authorText = document.createElement('div');
+    const btn = document.createElement('button');
+    titleText.innerText = this.titleC;
+    authorText.innerText = this.authorC;
+    btn.innerText = 'remove';
+    li.appendChild(titleText);
+    li.appendChild(authorText);
+    li.appendChild(btn);
+    bks.appendChild(li);
+    btn.setAttribute('onclick', `removeBk(${this.idC})`);
+    title.value = '';
+    author.value = '';
+    saveLocal();
+  }
+
+  addBooks() {
+    books.push({
+      author: this.authorC,
+      title: this.titleC,
+      id: this.idC,
+    });
+    console.log(books);
+    this.createBks();
+  }
+}
+
 function saveLocal() {
   localStorage.setItem('data', JSON.stringify(books));
 }
 
-function createBks(titleB, authorB, idI) {
-  const li = document.createElement('li');
-  li.setAttribute('id', `id${idI}`);
-  const titleText = document.createElement('div');
-  const authorText = document.createElement('div');
-  const btn = document.createElement('button');
-  titleText.innerText = titleB;
-  authorText.innerText = authorB;
-  btn.innerText = 'remove';
-  li.appendChild(titleText);
-  li.appendChild(authorText);
-  li.appendChild(btn);
-  bks.appendChild(li);
-  btn.setAttribute('onclick', `removeBk(${idI})`);
-  title.value = '';
-  author.value = '';
-  saveLocal();
-}
-
-function addBooks(e) {
-  books.push({
-    id: id += 1,
-    title: title.value,
-    author: author.value,
-  });
-  createBks(title.value, author.value, id += 1);
-  e.preventDefault();
-}
-
-// eslint-disable-next-line no-unused-vars
-function removeBk(index) {
-  const li = document.querySelector(`#id${index}`);
-  const isIndex = (ele) => ele.id === index;
-  books.splice(books.findIndex(isIndex, 1));
+// create a funtion to remove the book
+function removeBk(id) {
+  const li = document.querySelector(`#id${id}`);
+  const isIndex = (ele) => ele.id === id;
+  // li.remove();
   bks.removeChild(li);
+  // remove the book from the array and save it to local storage
+
+  const myIndex = books.findIndex(isIndex);
+  if (myIndex === -1) {
+    //     must change alert for an validation
+    alert('index mismatch');
+    return 0;
+  }
+  books.splice(myIndex, 1);
   saveLocal();
 }
 
@@ -57,17 +74,23 @@ function ReadLocalStorage() {
   }
 }
 
-function AddAllRowBooks() {
-  if (books === null) {
-    return null;
-  }
-  books.forEach((e) => {
-    createBks(e.title, e.author, e.index);
-  });
-}
+// console.log (classBk.addBooks());
 
 window.onload = function load() {
+  function AddAllRowBooks() {
+    if (books === null) {
+      return null;
+    }
+    books.forEach((e) => {
+      const classBk = new BksClass(e.author, e.author, id += 1);
+      classBk.createBks();
+    });
+  }
   ReadLocalStorage();
   AddAllRowBooks();
 };
-form.addEventListener('submit', addBooks);
+btn.addEventListener('click', (e) => {
+  const classBk = new BksClass(title.value, author.value, id += 1);
+  classBk.addBooks();
+  e.preventDefault();
+});
