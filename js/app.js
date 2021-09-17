@@ -7,6 +7,10 @@ let books = [
 
 ];
 
+function saveLocal() {
+  localStorage.setItem('data', JSON.stringify(books));
+}
+
 class BksClass {
   constructor(authorC, titleC, idC) {
     this.authorC = authorC;
@@ -39,29 +43,19 @@ class BksClass {
       title: this.titleC,
       id: this.idC,
     });
-    console.log(books);
     this.createBks();
   }
 }
 
-function saveLocal() {
-  localStorage.setItem('data', JSON.stringify(books));
-}
-
 // create a funtion to remove the book
+// eslint-disable-next-line no-unused-vars
 function removeBk(id) {
   const li = document.querySelector(`#id${id}`);
   const isIndex = (ele) => ele.id === id;
-  // li.remove();
   bks.removeChild(li);
   // remove the book from the array and save it to local storage
 
   const myIndex = books.findIndex(isIndex);
-  if (myIndex === -1) {
-    //     must change alert for an validation
-    alert('index mismatch');
-    return 0;
-  }
   books.splice(myIndex, 1);
   saveLocal();
 }
