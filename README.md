@@ -4,7 +4,7 @@
 > This is a simple boookList page to add your favorite books
 
 
-![screenshot](/img/awesome-books.png) 
+![screenshot](/img/awesomebks.png) 
 
 
 
