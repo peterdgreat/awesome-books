@@ -88,7 +88,7 @@ window.onload = function load() {
       return null;
     }
     books.forEach((e) => {
-      const classBk = new BksClass(e.author, e.author, id += 1);
+      const classBk = new BksClass(e.title, e.author, id += 1);
       classBk.createBks();
     });
   }
