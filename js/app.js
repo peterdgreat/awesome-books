@@ -2,6 +2,16 @@ const btn = document.querySelector('#bsub');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const bks = document.querySelector('.books');
+const mainPage = document.querySelector('.main');
+const newBkpage = document.querySelector('.newBk');
+const contactPage = document.querySelector('.contact');
+const domDate = document.querySelector('.date');
+
+// eslint-disable-next-line no-undef
+const { DateTime } = luxon;
+const p = document.createElement('p');
+p.innerHTML = DateTime.local().toLocaleString(DateTime.DATETIME_MED);
+domDate.appendChild(p);
 let id = 0;
 let books = [
 
@@ -90,3 +100,27 @@ btn.addEventListener('click', (e) => {
   classBk.addBooks();
   e.preventDefault();
 });
+
+// listNav.addEventListener()
+
+// eslint-disable-next-line no-unused-vars
+function display(navClass) {
+  if (navClass === 'listBk') {
+    mainPage.classList.add('d-block');
+    mainPage.classList.remove('d-none');
+    newBkpage.classList.add('d-none');
+    contactPage.classList.add('d-none');
+  } else if (navClass === 'addBk') {
+    mainPage.classList.add('d-none');
+    newBkpage.classList.add('d-block');
+    newBkpage.classList.remove('d-none');
+    contactPage.classList.add('d-none');
+  } else if (navClass === 'contactDetails') {
+    mainPage.classList.add('d-none');
+    newBkpage.classList.add('d-none');
+    contactPage.classList.add('d-block');
+    contactPage.classList.remove('d-none');
+  } else {
+    alert('Page Not Found');
+  }
+}
