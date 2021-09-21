@@ -6,6 +6,10 @@ ul {
   padding: 0;
 }
 
+.width {
+  width: 100%;
+}
+
 li {
   display: flex;
   justify-content: space-between;
@@ -15,10 +19,19 @@ li {
 .main {
   border: 3px solid black;
   box-shadow: 1px 2px  black;
+  margin: 5px 5px 5px 5px;
 }
 
-li:nth-child(even) {
+.main li:nth-child(odd) {
   background-color: #f5f5f5;
+}
+
+a {
+  color: black;
+}
+
+.nav-link {
+  color: black;
 }
 
 button {
@@ -50,4 +63,5 @@ hr {
 .navHeader {
   border: 3px solid black;
   box-shadow: 1px 2px  black;
+  margin: 5px 5px 5px 5px;
 }

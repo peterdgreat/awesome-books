@@ -5,6 +5,13 @@ const bks = document.querySelector('.books');
 const mainPage = document.querySelector('.main');
 const newBkpage = document.querySelector('.newBk');
 const contactPage = document.querySelector('.contact');
+const domDate = document.querySelector('.date');
+
+// eslint-disable-next-line no-undef
+const { DateTime } = luxon;
+const p = document.createElement('p');
+p.innerHTML = DateTime.local().toLocaleString(DateTime.DATETIME_MED);
+domDate.appendChild(p);
 let id = 0;
 let books = [
 
@@ -114,6 +121,6 @@ function display(navClass) {
     contactPage.classList.add('d-block');
     contactPage.classList.remove('d-none');
   } else {
-   alert('Page Not Found');
+    alert('Page Not Found');
   }
 }
