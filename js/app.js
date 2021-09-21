@@ -7,15 +7,16 @@ let books = [
 
 ];
 
-function saveLocal() {
-  localStorage.setItem('data', JSON.stringify(books));
-}
-
 class BksClass {
   constructor(authorC, titleC, idC) {
     this.authorC = authorC;
     this.titleC = titleC;
     this.idC = idC;
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  saveLocal() {
+    localStorage.setItem('data', JSON.stringify(books));
   }
 
   createBks() {
@@ -24,17 +25,20 @@ class BksClass {
     const titleText = document.createElement('div');
     const authorText = document.createElement('div');
     const btn = document.createElement('button');
+    const div = document.createElement('div');
     titleText.innerText = this.titleC;
     authorText.innerText = this.authorC;
-    btn.innerText = 'remove';
+    btn.innerText = 'Remove';
+    div.innerText = 'by';
     li.appendChild(titleText);
+    li.appendChild(div);
     li.appendChild(authorText);
     li.appendChild(btn);
     bks.appendChild(li);
     btn.setAttribute('onclick', `removeBk(${this.idC})`);
     title.value = '';
     author.value = '';
-    saveLocal();
+    this.saveLocal();
   }
 
   addBooks() {
@@ -57,7 +61,7 @@ function removeBk(id) {
 
   const myIndex = books.findIndex(isIndex);
   books.splice(myIndex, 1);
-  saveLocal();
+  BksClass.saveLocal();
 }
 
 function ReadLocalStorage() {
@@ -67,8 +71,6 @@ function ReadLocalStorage() {
     books = temp;
   }
 }
-
-// console.log (classBk.addBooks());
 
 window.onload = function load() {
   function AddAllRowBooks() {
