@@ -1,73 +1,61 @@
-<!-- # Awesome  Books
+# Awesome Books
 
-> This is a single page website to add favorite books, and delete.
 
-![screenshot](./app_screenshot.png)
+> This is a simple boookList page to add your favorite books
 
-Additional description about the project and its features.
+
+![screenshot](/img/awesome-books.png) 
+
+
+
 
 ## Built With
 
-- HTML
-- Css
-- -Bootstrap
+- HTML5
+
+- CSS
+
+- Boostrap
+
 - Javascript
-- vscode
-- Git and github
+
+- Visual Studio Code
+
+- Git & Github
+
 
 ## Live Demo
-
-[Live Demo Link](https://livedemo.com)
-
+[Awesome-books](https://peterdgreat.github.io/awesome-books/)
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
 ### Setup
+* Open terminal
+* Clone this project by command git clone https://github.com/peterdgreat/awesome-books
+* Cd conference-event folder
+* Open index.html in the browser (you can use Live Server in Visual Studio Code)
 
-### Install
 
 ### Usage
-
-### Run tests
-
-### Deployment
+#### For anyone who wants to practice Building a single page website without using a framwework.
+How to apply responsive design using flexbox and Bootstrap.
 
 
 
 ## Authors
 
-👤 **Author1**
+👤 **Ajayi Peter**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-## 🤝 Contributing
-
-<!-- Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/). -->
+- GitHub: [@githubhandle](https://github.com/peterdgreat)
+- Twitter: [@twitterhandle](https://twitter.com/dev_Peter_O)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/ajayi-peter-4391ab1b5)
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
 - Hat tip to anyone whose code was used
 - Inspiration
-- etc -->
+- etc
