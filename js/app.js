@@ -28,7 +28,7 @@ class BksClass {
     const div = document.createElement('div');
     titleText.innerText = this.titleC;
     authorText.innerText = this.authorC;
-    btn.innerText = 'remove';
+    btn.innerText = 'Remove';
     div.innerText = 'by';
     li.appendChild(titleText);
     li.appendChild(div);

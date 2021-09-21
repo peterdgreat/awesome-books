@@ -13,9 +13,32 @@ li {
 }
 
 .main {
-  border: 1px solid black;
+  border: 3px solid black;
+  box-shadow: 1px 2px  black;
 }
 
 li:nth-child(even) {
   background-color: #f5f5f5;
+}
+
+button {
+  box-shadow: 5px 5px  black;
+  border: 3px solid black;
+}
+
+.underline {
+  margin: 0 auto;
+  width: 60%;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+hr {
+  background-color: black;
+  border: 1px solid black;
+  opacity: 1;
+  box-shadow: 5px 1px  black;
 }
